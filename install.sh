@@ -142,7 +142,7 @@ chown www:www ${bandwidth_fifo} ${command_fifo}
 
 chmod u+x ${cur_dir}/opencdn
 rm -f /etc/init.d/opencdn
-mv -f ${cur_dir}/opencdn /etc/init.d/
+cp ${cur_dir}/opencdn /etc/init.d/
 chkconfig --add opencdn
 service opencdn restart
 service nginx start
