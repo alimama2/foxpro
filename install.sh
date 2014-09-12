@@ -4,6 +4,8 @@
 # E-Mail : wanghuafire@gmail.com
 # Blog   : www.firefoxbug.net
 
+#base package
+yum -y install openssl openssl-devel gcc gcc-c++ gcc-g77 pcre-devel wget
 ## Check user permissions ##
 if [ $(id -u) != "0" ]; then
 	echo "Error: NO PERMISSION! Please login as root to install FoxPro."
