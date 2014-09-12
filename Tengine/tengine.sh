@@ -125,7 +125,7 @@ cp /tmp/lua-cjson-2.1.0/cjson.so /usr/lib/lua/5.1/
 
 
 echo "========================== setting conf files =================================="
-rm -rf /usr/local/nginx/conf
+#rm -rf /usr/local/nginx/conf
 rm -f /usr/local/nginx/html/index.html
 
 mv /tmp/conf /usr/local/nginx/
