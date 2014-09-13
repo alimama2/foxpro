@@ -40,8 +40,8 @@ for key, val in pairs(domains) do
 		time_key = os.date("%Y-%m-%d_%H:%M", time - i)
 		local load = common.fileload(loadpath, "line")
 		local data = {total_byte = 0, total_count = 0, hit_byte = 0, hit_count = 0}
+		local names = {"total_byte", "total_count", "hit_byte", "hit_count"}
 		if(load) then
-			local names = {"total_byte", "total_count", "hit_byte", "hit_count"}
 			local count = 1
 			for ele in string.gfind(load, "%d+") do
 				if(names[count]) then
@@ -49,6 +49,9 @@ for key, val in pairs(domains) do
 					count = count + 1
 				end
 			end	
+		end
+		for nu in pairs(names) do
+			info.total[names[nu]] 	= info.total[names[nu]] + data[names[nu]]
 		end
 		data.time = time_key
 		table.insert(info[val], data)
